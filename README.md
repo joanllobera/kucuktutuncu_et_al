@@ -1,8 +1,9 @@
 # The Role of Sensorimotor Contingencies and Eye Scanpath Entropy in Presence in Virtual Reality: A Reinforcement Learning Paradigm
 
-This repository contains the materials used for the data analysis of 
+This repository contains the materials used for the data analysis of:
 
- Küçüktütüncü, Macia-Varela, Llobera & Slater  (2025) The Role of Sensorimotor Contingencies and Eye Scanpath Entropy in Presence in  Virtual Reality: A Reinforcement Learning Paradigm
+ Küçüktütüncü, Macia-Varela, Llobera & Slater  (2025) *The Role of Sensorimotor Contingencies and Eye Scanpath Entropy in Presence in  Virtual Reality: A Reinforcement Learning Paradigm* accepted at IEEE Transactions on Visualization and Computer Graphics (TVCG)
+
 
 The scripts found here can also be run directly online, in Kaggle, using the following links:
 
