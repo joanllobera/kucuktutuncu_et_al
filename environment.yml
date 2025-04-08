@@ -1,0 +1,15 @@
+name: rl-sm-vr
+channels:
+  - defaults
+
+dependencies:
+  - python=3.10.12 
+  - pip
+  - pandas
+  - openpyxl 
+  - plotly
+  - matplotlib
+  - seaborn
+  - jupyter
+  - pip:
+     - ptitprince
