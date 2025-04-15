@@ -1,6 +1,7 @@
 name: rl-sm-vr
 channels:
   - defaults
+  - conda-forge
 
 dependencies:
   - python=3.10.12 
@@ -8,8 +9,10 @@ dependencies:
   - pandas
   - openpyxl 
   - plotly
-  - matplotlib
-  - seaborn
   - jupyter
+  - r-irkernel
+  - r-tidyverse
   - pip:
-     - ptitprince
+    - ptitprince
+    - matplotlib==3.10.0
+    - seaborn==0.13.2 
