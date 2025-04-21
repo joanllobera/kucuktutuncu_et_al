@@ -13,7 +13,6 @@ dependencies:
   - r-irkernel
   - r-tidyverse
   - r-rstan
-  - xeus-cling
   - pip:
     - ptitprince
     - matplotlib==3.10.0
