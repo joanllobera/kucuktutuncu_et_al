@@ -10,9 +10,7 @@ dependencies:
   - openpyxl 
   - plotly
   - jupyter
-  - r-irkernel
-  - r-tidyverse
-  - r-rstan
+     
   - pip:
     - ptitprince
     - matplotlib==3.10.0
