@@ -112,7 +112,7 @@ for(i in 1:5){
 #1,2,...,5 and whether it was off (0) or on (1).
 #In the above loop these are the variables
 #change enabled accept and stored in the file result_binary.csv
-result_binary <- read.csv("~/Documents/Research/ERC 2016/Research/Presence/Results/result_binary.csv")
+result_binary <- read.csv("./result_binary.csv")
 rb <- result_binary
 #note that sum(rb$accept[rb$change==5 & rb$enabled==1] == 1), must be equal to outcomes[5,4], etc.
 
@@ -132,13 +132,13 @@ acceptdata <- list(
 )
 
 #monovision (for example) means that a change is offered to vision and the current state for vision is mono
-model <- glm(accept ~ monovision+stereovision+noparallax+parallax+monosound+spatialsound
-                      +lowres + highres + origcolour + newcolour, family = binomial, data = acceptdata)
+#model <- glm(accept ~ monovision+stereovision+noparallax+parallax+monosound+spatialsound
+#                      +lowres + highres + origcolour + newcolour, family = binomial, data = acceptdata)
 
-library(car)
-vif(model)
+#library(car)
+#vif(model)
 #says that there is aliasing
-print(alias(model)) #shows that newcolour is perfectly predictable from the other variables. Therefore, newcolour
+#print(alias(model)) #shows that newcolour is perfectly predictable from the other variables. Therefore, newcolour
 #should be removed
 
 model <- glm(accept ~ monovision+stereovision+noparallax+parallax+monosound+spatialsound
@@ -193,17 +193,17 @@ mean(e$b0[,3] > e$b0[,4])
 mean(e$b0[,3] > e$b0[,5])
 
 
-library(loo)
-source("loo_summary.R")
+#library(loo)
+#source("loo_summary.R")
 
-loo0 <- loo_summary(fit,"log_lik_accept0")
-loo1 <- loo_summary(fit,"log_lik_accept1")
+#loo0 <- loo_summary(fit,"log_lik_accept0")
+#loo1 <- loo_summary(fit,"log_lik_accept1")
 
 #everything is fine for this one
-loo0
+#loo0
 
 #there is only one data point with a bad diagnostic
-loo1
+#loo1
 
 ################################
 

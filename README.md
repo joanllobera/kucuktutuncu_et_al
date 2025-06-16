@@ -43,8 +43,11 @@ This should create all the tables needed for the data analysis.
 To run the R scripts containing the statistics and the stan model, you should do the following (only tested in mac):
 
 1. Install **R**
-2. Install the latest RStudio - In RStudio you have to go to Session 
-3. Set Working Directory -> Project Directory   and point to the folder in the repository called "transitions_analysis"- so that all files referred to are now local instead of having to put full path names.
+2. Install the latest RStudio 
+
+Note: on os X make sure you also have the latest Xtools to avoid problems with the compilation of Stan models 
+
+3. In RStudio you have to go to Session -> Set Working Directory -> Project Directory   and point to the folder in the repository called "transitions_analysis"- so that all files referred to are now local instead of having to put full path names.
 4.  Open the file called modeldata_publication.R
 5. You should not run this file as a whole - but rather copy each successive line to the RStudio console and execute it
 

@@ -1,17 +1,17 @@
  // For the binary variable accept
 data {
   int<lower=0> n; // number of observations
-  int<lower=0, upper=1> accept[n]; // binary outcome
-  int<lower=0, upper=1> monovision[n];
-  int<lower=0, upper=1> stereovision[n];
-  int<lower=0, upper=1> noparallax[n];
-  int<lower=0, upper=1> parallax[n];
-  int<lower=0, upper=1> monosound[n];
-  int<lower=0, upper=1> spatialsound[n];
-  int<lower=0, upper=1> lowres[n];
-  int<lower=0, upper=1> highres[n];
-  int<lower=0, upper=1> origcolour[n];
-  int<lower=0, upper=1> newcolour[n];
+  array[n] int<lower=0, upper=1> accept; // binary outcome
+  array[n] int<lower=0, upper=1> monovision;
+  array[n] int<lower=0, upper=1> stereovision;
+  array[n] int<lower=0, upper=1> noparallax;
+  array[n] int<lower=0, upper=1> parallax;
+  array[n] int<lower=0, upper=1> monosound;
+  array[n] int<lower=0, upper=1> spatialsound;
+  array[n] int<lower=0, upper=1> lowres;
+  array[n] int<lower=0, upper=1> highres;
+  array[n] int<lower=0, upper=1> origcolour;
+  array[n] int<lower=0, upper=1> newcolour;
 }
 
 transformed data{
