@@ -25,22 +25,12 @@ The analysis of the transitions data that is at the heart of the statistical ana
 
 ### Run data analysis locally
 
-To run locally, you need to first generate the tables needed for the data analysis.
+You must first download this repository to a local directory. The scripts running locally have three parts, each explained below. 
 
-to do so, make sure you have miniconda or anaconda installed. Open a terminal (mac, linux), or a conda powershell (windows) and do the following:
-
-```
-> conda env create -f environment.yml
-> conda activate rl-sm-vr   
-> jupyter notebook
-```
-
-Then in the browser open the jupyter notebook called **suplementary-material-for-k-kt-t-nc-et-al.ipynb**, and then select the menu option Run > Run all cels
-
-This should create all the tables needed for the data analysis.
+#### 1. Transitions analysis
 
 
-To run the R scripts containing the statistics and the stan model, you should do the following (only tested in mac):
+To run the R scripts containing the statistics and the stan model for the transitions analysis, you should do the following (only tested in mac):
 
 1. Install **R**
 2. Install the latest RStudio 
@@ -51,4 +41,35 @@ Note: on os X make sure you also have the latest Xtools to avoid problems with t
 4.  Open the file called modeldata_publication.R
 5. You should not run this file as a whole - but rather copy each successive line to the RStudio console and execute it
 
-During this process you will see that there are other libraries to install (like rstan and expm).
+Note: During this process you will see that there are other libraries to install (like rstan and expm).
+
+6. At the end of running this script, you should get the result that corresponds to Table 7 of the publication. 
+
+#### 2. Scanpath analysis
+
+To run the scripts and the stan model corresponding to the scanpath analysis, you should: 
+
+1. In RStudio you have to go to Session -> Set Working Directory -> Project Directory   and point to the folder in the repository called "scanpath"- so that all files referred to are now local instead of having to put full path names.
+2. If you have run the transition analysis you should also select Session -> New session to remove the variables previously created
+3. Open the file called scanpath.R
+4. Run this file step by step
+5. At the end of running this script you should get the result that corresponds to figure 6 of the publication.
+
+
+#### 3. Generate transitions table from raw data
+
+If instead of using the table `results_transitions.csv` you want to generte it from raw data,  you will need to run the python notebook. .
+
+To do so, put the terminal in folder "3.process_raw_data". Also, make sure you have miniconda or anaconda installed. Open a terminal (mac, linux), or a conda powershell (windows) and do the following:
+
+```
+> conda env create -f environment.yml
+> conda activate rl-sm-vr   
+> jupyter notebook
+```
+
+Then in the browser open the jupyter notebook called **suplementary-material-for-k-kt-t-nc-et-al.ipynb**, and then select the menu option Run > Run all cels
+
+This should create all the tables needed for the data analysis. In particular, the table `results_transitions.csv`, which is used as input for the Stan model in section 1.
+
+It will also generate some preliminary plots not included in the final publication, used as a sanity check.
